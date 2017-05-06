@@ -1,0 +1,34 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="Cheque.MainWindow"
+        Title="MainWindow" Height="350" Width="550">
+    <Grid Margin="10,10,10,0" Height="Auto" VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="380"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Content="Dated:" Grid.Row="0" Grid.Column="0"/>
+        <DatePicker Name="txtDated" Text="5/25/2017" Grid.Column="1" HorizontalAlignment="Left" Width="120"/>
+
+        <Label Content="Pay to:" Grid.Row="1" Grid.Column="0" Margin="0,2,0,0"/>
+        <TextBox Name="txtPayto" Text="COLLECTOR OF CUSTOM BIN QASIM QASIM PORT KARACHI." Grid.Row="1" Grid.Column="1" MinLines="2" TextWrapping="Wrap" SpellCheck.IsEnabled="True" Margin="0,2,0,0"/>
+
+        <Label Content="the sum of Rupees:" Grid.Row="2" Grid.Column="0" Margin="0,2,0,0"/>
+        <TextBox Name="txttheSumOfRupees" Text="SEVEN MILLION SIXTY FIVE THOUSAND SEVEN HUNDRED FOURTY THREE ONLY." Grid.Row="2" Grid.Column="1" MinLines="2" TextWrapping="Wrap" SpellCheck.IsEnabled="True" Margin="0,2,0,0"/>
+
+        <Label Content="Rs.:" Grid.Row="3" Grid.Column="0" Margin="0,2,0,0"/>
+        <TextBox Name="txtRs" Text="7,065,743" Grid.Row="3" Grid.Column="1" Width="100" HorizontalAlignment="Left" Margin="0,2,0,0"/>
+
+        <Button Name="btnPdf" Content="Pdf" Grid.Row="4" Grid.Column="0" Height="37" Width="147" Click="btnPdf_Click"/>
+        <Button Name="btnPrint" Content="Print" Grid.Row="4" Grid.Column="1" Height="37" Width="147" Click="btnPrint_Click" HorizontalAlignment="Left"/>
+    </Grid>
+</Window>
