@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -29,20 +30,28 @@ namespace Cheque
 
         private void btnPrint_Click(object sender, RoutedEventArgs e)
         {
-            string ReportName = "Report1";
+            try
+            {
+                string ReportName = "Report1";
 
-            LocalReport report = new LocalReport();
+                LocalReport report = new LocalReport();
 
-            report.ReportEmbeddedResource = "Cheque." + ReportName + ".rdlc";
+                //report.ReportEmbeddedResource = "Cheque." + ReportName + ".rdlc";
+                report.ReportPath = ReportName + ".rdlc";
 
-            ReportParameter rp1 = new ReportParameter("Dated", Convert.ToDateTime(txtDated.Text.ToString()).ToString("dd/MM/yyy"));
-            ReportParameter rp2 = new ReportParameter("PayTo", txtPayto.Text.ToString());
-            ReportParameter rp3 = new ReportParameter("theSumOfRupees", txttheSumOfRupees.Text.ToString());
-            ReportParameter rp4 = new ReportParameter("Rs", txtRs.Text.ToString());
+                ReportParameter rp1 = new ReportParameter("Dated", Convert.ToDateTime(txtDated.Text.ToString()).ToString("dd/MM/yyy"));
+                ReportParameter rp2 = new ReportParameter("PayTo", txtPayto.Text.ToString());
+                ReportParameter rp3 = new ReportParameter("theSumOfRupees", txttheSumOfRupees.Text.ToString());
+                ReportParameter rp4 = new ReportParameter("Rs", txtRs.Text.ToString());
 
-            report.SetParameters(new ReportParameter[] { rp1, rp2, rp3, rp4 });
+                report.SetParameters(new ReportParameter[] { rp1, rp2, rp3, rp4 });
 
-            report.PrintToPrinter();
+                report.PrintToPrinter();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void btnPdf_Click(object sender, RoutedEventArgs e)
@@ -70,13 +79,13 @@ namespace Cheque
                         fs.Write(bytes, 0, bytes.Length);
                     }
 
-                    MessageBox.Show("Cheque printing process initiated.");
+                    MessageBox.Show("File Created.");
                 }
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.ToString());
             }
 
         }
@@ -107,7 +116,7 @@ namespace Cheque
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.ToString());
                 return null;
             }
         }
