@@ -16,7 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Cheque
+namespace Rail
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -36,7 +36,7 @@ namespace Cheque
 
                 LocalReport report = new LocalReport();
 
-                //report.ReportEmbeddedResource = "Cheque." + ReportName + ".rdlc";
+                //report.ReportEmbeddedResource = "Rail." + ReportName + ".rdlc";
                 report.ReportPath = ReportName + ".rdlc";
 
                 ReportParameter rp1 = new ReportParameter("Dated", Convert.ToDateTime(txtDated.Text.ToString()).ToString("dd/MM/yyy"));
@@ -99,7 +99,7 @@ namespace Cheque
 
                 string ReportName = "Report1";
 
-                _reportViewer.LocalReport.ReportEmbeddedResource = "Cheque." + ReportName + ".rdlc";
+                _reportViewer.LocalReport.ReportEmbeddedResource = "Rail." + ReportName + ".rdlc";
                 //_reportViewer.LocalReport.ReportPath = ReportName + ".rdlc";
 
                 ReportParameter rp1 = new ReportParameter("Dated", Convert.ToDateTime(txtDated.Text.ToString()).ToString("dd/MM/yyy"));

@@ -29,8 +29,8 @@
 	</ItemGroup>
 	<Import Project="$(MSBuildExtensionsPath32)\InstallShield\2015Limited\InstallShield.targets"/>
 	<ItemGroup>
-		<ProjectReference Include="..\Cheque\Cheque.csproj">
-			<Name>Cheque</Name>
+		<ProjectReference Include="..\Cheque\Rail.csproj">
+			<Name>Rail</Name>
 			<Project>{A3EF01CA-602F-4951-AA79-731FB35F2AD8}</Project>
 		</ProjectReference>
 	</ItemGroup>

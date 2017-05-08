@@ -9,7 +9,7 @@ using System.IO;
 using System.Drawing.Imaging;
 using System.Drawing;
 
-namespace Cheque
+namespace Rail
 {
     public static class PrintReport
     {
